@@ -10,7 +10,7 @@ package_list:
 - curl
 ```
 
-If you have mixed Operating Systems you may need to use the following:
+If you have mixed operating systems you may need to use the following:
 ```
 package_apt:
 - python-dev
