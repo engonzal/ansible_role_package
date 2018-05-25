@@ -1,23 +1,9 @@
 galaxy_info:
   author: engonzal
   description: Package installation for Linux.
-  license: license BSD
+  license: "license BSD"
   min_ansible_version: 2.4
-  platforms:
-  - name: GenericUNIX
-    versions:
-      - all
-      - any
-  - name: GenericBSD
-    versions:
-      - all
-      - any
-  - name: GenericLinux
-    versions:
-      - all
-      - any
-
-  galaxy_tags: []
+  galaxy_tags:
   - packages
   - base
 dependencies: []
