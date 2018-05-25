@@ -1,0 +1,19 @@
+---
+- name: Install General Packages
+  package:
+    name:
+    state: present
+  with_items: "{{ package_list }}"
+
+- name: Install Ubuntu Packages
+  apt:
+    update_cache: yes
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ package_apt }}"
+
+- name: Install CentOS Packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ package_yum }}"
