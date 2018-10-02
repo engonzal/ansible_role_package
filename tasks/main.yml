@@ -3,7 +3,7 @@
   package:
     name:
     state: present
-  with_items: "{{ package_list }}"
+  loop: "{{ package_list }}"
   when:
     - package_list is defined
 
@@ -12,7 +12,7 @@
     update_cache: yes
     name: "{{ item }}"
     state: present
-  with_items: "{{ package_apt }}"
+  loop: "{{ package_apt }}"
   when:
     - ansible_os_family == "Debian"
     - package_apt is defined
@@ -21,7 +21,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  with_items: "{{ package_yum }}"
+  loop: "{{ package_yum }}"
   when:
     - ansible_os_family == "RedHat"
     - package_yum is defined
