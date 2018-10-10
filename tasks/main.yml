@@ -1,15 +1,16 @@
 ---
 - name: Install General Packages
   package:
-    name:
+    name: "{{ item }}"
     state: present
+    update_cache: true
   loop: "{{ package_list }}"
   when:
     - package_list is defined
 
 - name: Install Ubuntu Packages
   apt:
-    update_cache: yes
+    update_cache: true
     name: "{{ item }}"
     state: present
   loop: "{{ package_apt }}"
@@ -21,6 +22,7 @@
   yum:
     name: "{{ item }}"
     state: present
+    update_cache: true
   loop: "{{ package_yum }}"
   when:
     - ansible_os_family == "RedHat"
