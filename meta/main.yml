@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: package
   author: engonzal
   description: Package installation for Linux.
   license: "license BSD"

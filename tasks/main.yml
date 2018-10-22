@@ -1,29 +1,25 @@
 ---
 - name: Install General Packages
   package:
-    name: "{{ item }}"
+    name: "{{ package_list }}"
     state: present
     update_cache: true
-  loop: "{{ package_list }}"
   when:
     - package_list is defined
-
 - name: Install Ubuntu Packages
   apt:
     update_cache: true
-    name: "{{ item }}"
+    name: "{{ package_apt }}"
     state: present
-  loop: "{{ package_apt }}"
   when:
     - ansible_os_family == "Debian"
     - package_apt is defined
 
 - name: Install CentOS Packages
   yum:
-    name: "{{ item }}"
+    name: "{{ package_yum }}"
     state: present
     update_cache: true
-  loop: "{{ package_yum }}"
   when:
     - ansible_os_family == "RedHat"
     - package_yum is defined
