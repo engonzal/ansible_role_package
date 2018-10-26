@@ -1,5 +1,5 @@
 ### Ansible Roles: Package
-
+[![Build Status](https://travis-ci.org/engonzal/ansible_role_package.svg?branch=master)](https://travis-ci.org/engonzal/ansible_role_package)
 Module to install a list of packages.  
 
 #### Role Variables
