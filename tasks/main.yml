@@ -6,6 +6,7 @@
     update_cache: true
   when:
     - package_list is defined
+
 - name: Install Ubuntu Packages
   apt:
     update_cache: true

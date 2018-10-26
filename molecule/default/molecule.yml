@@ -2,28 +2,29 @@
 dependency:
   name: galaxy
 driver:
-  name: lxd
+  name: docker
 lint:
   name: yamllint
 platforms:
-  - name: cent7
-    source:
-      type: image
-      mode: pull
-      server: https://images.linuxcontainers.org
-      protocol: lxd
-      alias: centos/7/amd64
-  - name: xenial
-    source:
-      type: image
-      mode: pull
-      server: https://images.linuxcontainers.org
-      protocol: lxd
-      alias: ubuntu/xenial/amd64
+  - name: instance
+    # image: centos:7
+    # Initial tests with geerlingguys docker images
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    groups:
+      - min
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  inventory:
+    group_vars:
+      min:
+        package_list:
+          - git
+          - curl
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
 scenario:
   name: default
 verifier:

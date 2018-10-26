@@ -1,14 +1,16 @@
 *******
-LXD driver installation guide
+Docker driver installation guide
 *******
 
 Requirements
 ============
 
-* LXD
+* General molecule dependencies (see https://molecule.readthedocs.io/en/latest/installation.html)
+* Docker Engine
+* docker-py
+* docker
 
 Install
 =======
 
-No additional python packages required.  Apt installs necessary requirements
-while installing `lxd`.
+    $ sudo pip install docker-py
