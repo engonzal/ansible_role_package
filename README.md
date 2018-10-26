@@ -1,7 +1,8 @@
 ### Ansible Roles: Package
-[![Build Status](https://travis-ci.org/engonzal/ansible_role_package.svg?branch=master)](https://travis-ci.org/engonzal/ansible_role_package)
 Module to install a list of packages.  
 
+
+[![Build Status](https://travis-ci.org/engonzal/ansible_role_package.svg?branch=master)](https://travis-ci.org/engonzal/ansible_role_package)
 #### Role Variables
 For general packages when not using mixed Operating Systems you can use the following:
 ```
